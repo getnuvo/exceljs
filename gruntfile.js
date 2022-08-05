@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-exorcise');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.initConfig({
     babel: {
@@ -27,14 +28,17 @@ module.exports = function(grunt) {
     browserify: {
       options: {
         transform: [
-          ['babelify', {
-            // enable babel transpile for node_modules
-            global: true,
-            presets: ['@babel/preset-env'],
-            // core-js should not be transpiled
-            // See https://github.com/zloirock/core-js/issues/514
-            ignore: [/node_modules[\\/]core-js/],
-          }],
+          [
+            'babelify',
+            {
+              // enable babel transpile for node_modules
+              global: true,
+              presets: ['@babel/preset-env'],
+              // core-js should not be transpiled
+              // See https://github.com/zloirock/core-js/issues/514
+              ignore: [/node_modules[\\/]core-js/],
+            },
+          ],
         ],
         browserifyOptions: {
           // enable source map for browserify
@@ -123,6 +127,16 @@ module.exports = function(grunt) {
         src: ['./dist/exceljs.js'],
         options: {
           specs: './build/web/exceljs.spec.js',
+        },
+      },
+    },
+
+    watch: {
+      scripts: {
+        files: './lib/**/*.js',
+        tasks: ['browserify'],
+        options: {
+          interrupt: true,
         },
       },
     },

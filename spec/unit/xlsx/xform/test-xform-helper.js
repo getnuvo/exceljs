@@ -77,10 +77,7 @@ const its = {
           child: getExpectation(expectation, 'preparedModel'),
           post: true,
         };
-        const result = `<compy><pre/>${getExpectation(
-          expectation,
-          'xml'
-        )}<post/></compy>`;
+        const result = `<compy><pre/>${getExpectation(expectation, 'xml')}<post/></compy>`;
 
         const xform = new CompyXform({
           tag: 'compy',
@@ -109,10 +106,7 @@ const its = {
   parseIn(expectation) {
     it('Parse within composite', () =>
       new Promise((resolve, reject) => {
-        const xml = `<compy><pre/>${getExpectation(
-          expectation,
-          'xml'
-        )}<post/></compy>`;
+        const xml = `<compy><pre/>${getExpectation(expectation, 'xml')}<post/></compy>`;
         const childXform = expectation.create();
         const result = {pre: true};
         result[childXform.tag] = getExpectation(expectation, 'parsedModel');

@@ -30,10 +30,7 @@ const assertDate = function(address, cell, expected) {
     cell.type === Excel.ValueType.Date,
     `expected ${address} type to be Date, was ${cell.type}`
   );
-  assert(
-    cell.value instanceof Date,
-    `expected  value ${address} to be a Date, was ${cell.value}`
-  );
+  assert(cell.value instanceof Date, `expected  value ${address} to be a Date, was ${cell.value}`);
   const {value} = cell;
   assert(
     value.getYear() === expected.getYear(),
@@ -113,10 +110,7 @@ wb.csv.readFile(filename, options).then(() => {
     ws.getCell('B7').type === Excel.ValueType.Number,
     `expected B7 type to be Number, was ${ws.getCell('B7').type}`
   );
-  assert(
-    ws.getCell('C7').value === null,
-    `Expected C7 == null, was ${ws.getCell('C7').value}`
-  );
+  assert(ws.getCell('C7').value === null, `Expected C7 == null, was ${ws.getCell('C7').value}`);
   assert(
     ws.getCell('C7').type === Excel.ValueType.Null,
     `expected C7 type to be Null, was ${ws.getCell('C7').type}`

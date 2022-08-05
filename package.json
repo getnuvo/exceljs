@@ -16,7 +16,7 @@
     "node": ">=8.3.0"
   },
   "main": "./excel.js",
-  "browser": "./dist/exceljs.min.js",
+  "browser": "./dist/exceljs.js",
   "types": "./index.d.ts",
   "files": [
     "dist",
@@ -55,7 +55,8 @@
     "benchmark:debug": "node --expose-gc --inspect-brk --trace-deopt benchmark",
     "build": "grunt build",
     "install-build": "npm install && grunt build",
-    "preversion": "npm run clean && npm run build"
+    "preversion": "npm run clean && npm run build",
+    "watchdog": "grunt watch"
   },
   "husky": {
     "hooks": {

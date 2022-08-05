@@ -72,7 +72,9 @@ async function runProfiling(name, run) {
     })} MB`
   );
   console.log(
-    `WARMUP: Current memory usage (after GC): ${currentMemoryUsage({runGarbageCollector: true})} MB`
+    `WARMUP: Current memory usage (after GC): ${currentMemoryUsage({
+      runGarbageCollector: true,
+    })} MB`
   );
 
   for (let i = 1; i <= runs; i += 1) {
