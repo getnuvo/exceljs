@@ -21,8 +21,6 @@ ColumnSum.prototype = {
     return this.sums.join(', ');
   },
   toAverages() {
-    return this.sum
-      .map(value => (value ? value / this.count : value))
-      .join(', ');
+    return this.sum.map(value => (value ? value / this.count : value)).join(', ');
   },
 };

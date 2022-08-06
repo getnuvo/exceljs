@@ -1,20 +1,7 @@
 const Range = verquire('doc/range');
 
 describe('Range', () => {
-  function check(
-    d,
-    range,
-    $range,
-    tl,
-    $t$l,
-    br,
-    $b$r,
-    top,
-    left,
-    bottom,
-    right,
-    sheetName
-  ) {
+  function check(d, range, $range, tl, $t$l, br, $b$r, top, left, bottom, right, sheetName) {
     expect(d.range).to.equal(range);
     expect(d.$range).to.equal($range);
     expect(d.tl).to.equal(tl);
@@ -36,58 +23,10 @@ describe('Range', () => {
 
   it('constructs as expected', () => {
     // check range + rotations
-    check(
-      new Range('B5:D10'),
-      'B5:D10',
-      '$B$5:$D$10',
-      'B5',
-      '$B$5',
-      'D10',
-      '$D$10',
-      5,
-      2,
-      10,
-      4
-    );
-    check(
-      new Range('B10:D5'),
-      'B5:D10',
-      '$B$5:$D$10',
-      'B5',
-      '$B$5',
-      'D10',
-      '$D$10',
-      5,
-      2,
-      10,
-      4
-    );
-    check(
-      new Range('D5:B10'),
-      'B5:D10',
-      '$B$5:$D$10',
-      'B5',
-      '$B$5',
-      'D10',
-      '$D$10',
-      5,
-      2,
-      10,
-      4
-    );
-    check(
-      new Range('D10:B5'),
-      'B5:D10',
-      '$B$5:$D$10',
-      'B5',
-      '$B$5',
-      'D10',
-      '$D$10',
-      5,
-      2,
-      10,
-      4
-    );
+    check(new Range('B5:D10'), 'B5:D10', '$B$5:$D$10', 'B5', '$B$5', 'D10', '$D$10', 5, 2, 10, 4);
+    check(new Range('B10:D5'), 'B5:D10', '$B$5:$D$10', 'B5', '$B$5', 'D10', '$D$10', 5, 2, 10, 4);
+    check(new Range('D5:B10'), 'B5:D10', '$B$5:$D$10', 'B5', '$B$5', 'D10', '$D$10', 5, 2, 10, 4);
+    check(new Range('D10:B5'), 'B5:D10', '$B$5:$D$10', 'B5', '$B$5', 'D10', '$D$10', 5, 2, 10, 4);
 
     check(
       new Range('G7', 'C16'),

@@ -78,9 +78,7 @@ describe('ExcelJS', () => {
     wb.csv
       .writeBuffer()
       .then(buffer => {
-        expect(buffer.toString()).toEqual(
-          '"Hello, World!",What time is it?\n7,12pm'
-        );
+        expect(buffer.toString()).toEqual('"Hello, World!",What time is it?\n7,12pm');
         done();
       })
       .catch(error => {
