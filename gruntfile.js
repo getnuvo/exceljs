@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-terser');
@@ -130,13 +130,12 @@ module.exports = function(grunt) {
         },
       },
     },
-
     watch: {
       scripts: {
-        files: './lib/**/*.js',
+        files: ['./lib/**/*.js'],
         tasks: ['browserify'],
         options: {
-          interrupt: true,
+          spawn: false,
         },
       },
     },
@@ -144,4 +143,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['babel:dist', 'browserify', 'terser', 'exorcise', 'copy']);
   grunt.registerTask('ug', ['terser']);
+  grunt.loadNpmTasks('grunt-contrib-watch');
 };
