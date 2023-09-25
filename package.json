@@ -1,5 +1,5 @@
 {
-  "name": "20-exceljs",
+  "name": "nuvo-exceljs",
   "version": "4.3.0",
   "description": "Excel Workbook Manager - Read and Write xlsx and csv Files.",
   "private": false,
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/20Scoops-CNX/exceljs.git"
+    "url": "git@github.com:getnuvo/exceljs.git"
   },
   "engines": {
     "node": ">=8.3.0"
