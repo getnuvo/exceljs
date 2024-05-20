@@ -26,4 +26,3 @@ jobs:
         with:
           github_token: ${{ secrets.DEPLOYER_TOKEN }}
           release_branches: master
-          custom_tag: 4.5.18
