@@ -593,7 +593,7 @@ export interface Row extends Style {
 	/**
 	 * Commit a completed row to stream
 	 */
-	commit(): void;
+	commit(): Promise<void>;
 	destroy(): void;
 	addPageBreak(lft?: number, rght?: number): void;
 }
@@ -1080,7 +1080,7 @@ export type ConditionalFormattingRule = ExpressionRuleType | CellIsRuleType | To
 	| ContainsTextRuleType | TimePeriodRuleType | DataBarRuleType;
 
 
-export type RowValues = CellValue[] | { [key: string]: CellValue } | undefined | null; 
+export type RowValues = CellValue[] | { [key: string]: CellValue } | undefined | null;
 
 export interface ConditionalFormattingOptions {
 	ref: string;
@@ -1192,14 +1192,14 @@ export interface Worksheet {
 
 	/**
 	 * Tries to find and return row for row no, else undefined
-	 * 
+	 *
 	 * @param row The 1-index row number
 	 */
 	findRow(row: number): Row | undefined;
 
 	/**
 	 * Tries to find and return rows for row no start and length, else undefined
-	 * 
+	 *
 	 * @param start The 1-index starting row number
 	 * @param length The length of the expected array
 	 */
@@ -1341,7 +1341,7 @@ export interface Worksheet {
 		range: ImageRange;
 	}>;
 
-	commit(): void;
+	commit(): Promise<void>;
 
 	model: WorksheetModel;
 
