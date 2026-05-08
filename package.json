@@ -53,8 +53,8 @@
     "clean": "rm -rf build/ && rm -rf dist",
     "benchmark": "node --expose-gc benchmark",
     "benchmark:debug": "node --expose-gc --inspect-brk --trace-deopt benchmark",
-    "build": "grunt build",
-    "install-build": "npm install && grunt build",
+    "build": "npx grunt build",
+    "install-build": "npm install && npx grunt build",
     "preversion": "npm run clean && npm run build",
     "watchdog": "grunt watch",
     "serve": "npx serve ./"
