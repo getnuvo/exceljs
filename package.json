@@ -1,6 +1,6 @@
 {
   "name": "nuvo-exceljs",
-  "version": "4.5.18",
+  "version": "4.5.24",
   "description": "Excel Workbook Manager - Read and Write xlsx and csv Files.",
   "private": false,
   "license": "MIT",
@@ -16,8 +16,20 @@
     "node": ">=16.0.0"
   },
   "main": "./excel.js",
+  "module": "./dist/exceljs.min.js",
   "browser": "./dist/exceljs.min.js",
   "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "browser": "./dist/exceljs.min.js",
+      "import": "./dist/exceljs.bare.js",
+      "require": "./excel.js",
+      "default": "./excel.js"
+    },
+    "./dist/*": "./dist/*",
+    "./lib/*": "./lib/*"
+  },
   "files": [
     "dist",
     "lib",
